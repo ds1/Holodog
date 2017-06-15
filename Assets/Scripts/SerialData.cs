@@ -166,7 +166,7 @@ public class SerialData : MonoBehaviour {
 	bool PlayMovieIfPossible (List<MovieTexture> movieTextureList) {
 		Renderer r = GetComponent<Renderer> ();
 		MovieTexture currentMovie = r.material.mainTexture as MovieTexture;
-		if (!currentMovie.isPlaying) { 
+		if (currentMovie == null || !currentMovie.isPlaying) { 
 			int count = movieTextureList.Count;
 			int randomIndex = Random.Range (0, count - 1);
 		
